@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="register">
+  {% include 'constants/alert.html' %}
+    <form class="form" action="{% url 'register' %}" method="POST">
+     {% csrf_token %}
+      <fieldset>
+        <legend><p class="legend">Register here</p> </legend>
+        <p><label for="first_name">First Name:</label> <br> <input type="text" name="first_name" size="50" maxlength="15" required></p>
+        <p><label for="last_name">Last Name:</label> <br> <input type="text" name="last_name" size="50" maxlength="15" required></p>
+        <p><label for="username">User Name:</label> <br> <input type="text" name="username" size="50" maxlength="15" required></p>
+        <p><label for="email">Email :</label> <br> <input type="email" name="email" size="50" maxlength="30" required></p>
+        <p><label for="password">Password:</label> <br> <input type="password" name="password" size="50" maxlength="15" required></p>
+        <p><label for="password2">Comfirm Password:</label> <br> <input type="password" name="password2" size="50" maxlength="15" required></p>
+        <p><label for="register"></label> <input class="submit" type="submit"  value="REGISTER" size="50" maxlength="15" required></p> 
+      </fieldset>
+    </form>   
+</section>
+{% endblock %}

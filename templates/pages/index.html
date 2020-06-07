@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
+<section class="article_bar">
+    <div id="article_bar">
+       <div class="column1">
+        <img src="{% static 'image/hydraulic-1.jpg' %}" alt="hydraulic machine" width="300"
+        height="300">
+           <p class="column">Hydraulic lift</p>             
+       </div>  
+       <div class="column2">     
+           <img src="{% static 'image/scissor-1.jpg' %}" alt="Scissor machine" width="300" 
+           height="300" >
+            <p class="column">Scissor lift </p>
+       </div>       
+    </div>
+   </section>
+   <section class="manajor">
+       <div class="column3">
+          <figure>
+            <img src="{% static 'image/mwaya-1.jpg' %}" alt="founder" width="200"
+            height="200" > <figcaption> Founder:Oremus Mwaya </figcaption>
+          </figure>   
+       </div> 
+       <div class="column4">
+           <figure>       
+             <img src="{% static 'image/wizzy-1.jpg' %}" alt="Senior" width="200"
+              height="200">  <figcaption> Senior:Waziri Abdallah </figcaption>
+           </figure>  
+       </div>        
+   </section>
+{% endblock %}

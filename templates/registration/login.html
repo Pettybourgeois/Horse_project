@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="register">
+   <form class="form" action="{% url 'login' %}" method="POST">
+     {% csrf_token %}
+      <fieldset>
+        <p>{% include 'constants/alert.html' %}</p>
+        <legend><p class="legend">Login here</p> </legend>
+        <p><label for="user_name">User Name: <br> <input type="text" name="username" size="50" maxlength="15" required></label></p>
+        <p><label for="password1">Password: <br> <input type="password" name="password" size="50" maxlength="15" required></label></p>
+        <p><label for="register"> <input class="submit" type="submit"  value="LOGIN" size="50" maxlength="15" required></label></p> 
+      </fieldset>
+   </form> 
+   <p><a href="{% url 'password_reset' %}"><button>Forgetten and change password</button> </a></p>  
+  </section>
+{% endblock %}

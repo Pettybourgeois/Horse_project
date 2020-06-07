@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated %}
+<section class="contact_us">
+    <form class="form" action="{% url 'contact' %}" method="POST">
+      {% csrf_token %}
+      <fieldset>
+        <legend><p class="legend">Contact us</p> </legend>
+        <p>{% include 'constants/alert.html' %}</p>
+        <p><label for="machine_name"><br> <input type="hidden" name="machine"  size="50" value="{{ machine.title }}"  ></label></p>
+        <p><label for="user_name"><br> <input type="hidden" name="username"  size="50" maxlength="15" value="{{ user.username }}" ></label></p>
+        <p><label for="email">Email : <br> <input type="email" name="email"  size="50" maxlength="30" value="{{ user.email }}"  ></label></p>
+        <p><label for="phone">Phone no: <br> <input type="text" name="phone"  size="50" maxlength="15"></label></p>
+        <p><label for="comment">Message: <br> <textarea name="message" id="comment" cols="50" rows="10"> make order or contact us </textarea></label></p>
+        <p><label for="register"> <input class="submit" type="submit"  value="SEND" ></label></p> 
+      </fieldset>
+   </form>   
+</section>
+<section class="part">
+ <div id="part">
+    <div class="parts">
+     <p class="title">{{ machine.title }}</p>   
+     <img src="{{ machine.main_photo.url }}" alt="hydraulic machine" width="400"
+     height="400">
+     <p class="status">Status: {{ machine.status }} <br>Published: {{ machine.machine_date }}</p>           
+    </div> 
+    <div  class="parts">
+       <a href="{{ machine.photo_5.url }}" data-lightbox="parts">
+        <img src="{{ machine.photo_5.url }}" alt="" height="50" width="100">
+       </a>
+    </div>
+    <div class="parts">
+       <a href="{{ machine.photo_1.url }}"  data-lightbox="parts">
+         <img src="{{ machine.photo_1.url }}" alt=""  height="50" width="100">
+       </a>
+    </div>
+    <div  class="parts">
+      <a href="{{ machine.photo_2.url }}"  data-lightbox="parts">
+       <img src="{{ machine.photo_2.url }}" alt=""  height="50" width="100">
+      </a>
+    </div>
+    <div  class="parts">
+      <a href="{{ machine.photo_3.url }}"  data-lightbox="parts">
+       <img src="{{ machine.photo_3.url }}" alt=""  height="50" width="100">
+      </a>
+    </div>
+    <div  class="parts">
+      <a href="{{ machine.photo_4.url }}"  data-lightbox="parts"> 
+       <img src="{{ machine.photo_4.url }}" alt=""  height="50" width="100">
+     </a>
+    </div>           
+ </div>
+</section>
+
+{% endif %}
+{% endblock %}

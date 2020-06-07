@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+<section class="about">
+    <div id="about">
+       <div class="column11">
+           <h1 class="column">Horse enterprise</h1> 
+           <p class="columns"> Is Mechanical Engineering company deals with 
+               all types of mechanical projects like new projects,
+               inovation projects and modification projects.
+           </p>            
+       </div>  
+       <div class="column12">     
+            <h1 class="column">Activities </h1>
+            <ul  class="column"> 
+                <li  class="column">Design New/modified projects for order</li>
+                <li  class="column">Constructing all Engineering drawings for order</li>
+                <li  class="column">Constructing project alternatives for order</li>
+                <li  class="column">Construction projects drawings for innovations</li>
+            </ul>
+       </div>       
+    </div>
+</section>
+<section class="manajor">
+       <div class="column3">
+          <figure>
+            <img src="{% static 'image/mwaya-1.jpg' %}" alt="founder" width="200"
+            height="200" > <figcaption> Founder:Oremus Mwaya </figcaption>
+          </figure>   
+       </div> 
+       <div class="column4">
+           <figure>       
+             <img src="{% static 'image/wizzy-1.jpg' %}" alt="Senior" width="200"
+              height="200">  <figcaption> Senior:Waziri Abdallah </figcaption>
+           </figure>  
+       </div>        
+</section>
+{% endblock %}
