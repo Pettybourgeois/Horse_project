@@ -6,9 +6,9 @@
             <li class="bars" ><a class="bars {% if '/' == request.path %} active {% endif %}" href="{% url 'index' %}"> HOME </a></li>
             <li class="bars"><a class="bars {% if 'about' in request.path %} active {% endif %}" href="{% url 'about' %}"> ABOUT </a></li> 
             <li class="bars"><a class="bars {% if 'machines' in request.path %} active {% endif %}" href="{% url 'machines' %}"> MACHINES </a></li>       
-         <ul id="account">
+          
             {% if user.is_authenticated %}
-            <li class="bars">
+            <li class="bars bar">
                 <a class="bars {% if 'logout' in request.path %} active {% endif %}" href="{% url 'logout' %}">
                    LOGOUT</a>
                 <form action="{ % url 'logout' %}" method="POST">
@@ -17,8 +17,8 @@
                 </form> 
             </li>   
             {% else %}
-            <li class="bars"><a class="bars {% if 'register' in request.path  %} active {% endif %}" href="{% url 'register' %}"> REGISTER </a></li>
-            <li class="bars"><a class="bars {% if 'login' in request.path  %} active {% endif %}" href="{% url 'login' %}"> LOGIN </a></li>
+            <li class="bars bar"><a class="bars {% if 'register' in request.path  %} active {% endif %}" href="{% url 'register' %}"> REGISTER </a></li>
+            <li class="bars bar"><a class="bars {% if 'login' in request.path  %} active {% endif %}" href="{% url 'login' %}"> LOGIN </a></li>
             {% endif %}
          </ul> 
         </ul>
