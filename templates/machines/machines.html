@@ -28,7 +28,7 @@
        <div class="r_list">
         <p class="title">{{ machine.title }}</p>  
         <p class="function">FUNCTION:<br>{{ machine.function }} </p>
-        <img src="{{ machine.main_photo.url }}" alt="hydraulic machine" width="300"
+        <img src="{{ machine.main_photo.url }}" alt="hydraulic machine" width="30%"
         height="300">
         <p class="status">Status: {{ machine.status }} <br> {{ machine.machine_date }} </p> 
         <p class="detail"><a href="{% url 'machine' machine.id %}"><button> Register or login for detail info</button></a></p>            
